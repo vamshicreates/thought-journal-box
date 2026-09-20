@@ -167,15 +167,29 @@ function NotesPage() {
                   placeholder="Note title"
                   className="text-lg font-semibold"
                 />
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  aria-label="Delete note"
-                  onClick={() => deleteMutation.mutate(selected.id)}
-                  disabled={deleteMutation.isPending}
-                >
-                  <Trash2 className="h-4 w-4 text-destructive" />
-                </Button>
+                <div className="flex items-center gap-1">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    aria-label="Save note"
+                    disabled={!isDirty || saveMutation.isPending}
+                    onClick={() =>
+                      saveMutation.mutate({ id: selected.id, title, body })
+                    }
+                  >
+                    <Save className="mr-1 h-4 w-4" />
+                    Save
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    aria-label="Delete note"
+                    onClick={() => deleteMutation.mutate(selected.id)}
+                    disabled={deleteMutation.isPending}
+                  >
+                    <Trash2 className="h-4 w-4 text-destructive" />
+                  </Button>
+                </div>
               </CardHeader>
               <CardContent>
                 <Textarea
@@ -184,8 +198,18 @@ function NotesPage() {
                   placeholder="Start writing…"
                   className="min-h-[40vh] resize-y"
                 />
-                <p className="mt-2 text-xs text-muted-foreground">
-                  {saveMutation.isPending ? "Saving…" : "Changes save automatically."}
+                <p className="mt-2 flex items-center gap-1 text-xs text-muted-foreground">
+                  {saveMutation.isPending ? (
+                    <>Saving…</>
+                  ) : isDirty ? (
+                    <>
+                      <Pencil className="h-3 w-3" /> Unsaved changes
+                    </>
+                  ) : (
+                    <>
+                      <Check className="h-3 w-3" /> Saved
+                    </>
+                  )}
                 </p>
               </CardContent>
             </Card>

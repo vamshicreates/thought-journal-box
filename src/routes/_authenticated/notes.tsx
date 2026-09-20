@@ -50,6 +50,9 @@ function NotesPage() {
   const [body, setBody] = useState("");
 
   const selected = notes.find((n) => n.id === selectedId) ?? null;
+  const isDirty = Boolean(
+    selected && (title !== selected.title || body !== selected.body),
+  );
 
   useEffect(() => {
     if (selected) {

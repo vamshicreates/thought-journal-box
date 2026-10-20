@@ -1,4 +1,4 @@
-# Thought Journal Box — My Notes
+# Notely — Thought Journal Box
 
 A personal notes app for writing and returning to saved entries. This project was created with Lovable.
 

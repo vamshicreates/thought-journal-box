@@ -1,30 +1,31 @@
-# My Notes
+# Thought Journal Box — My Notes
 
-Create a simple note-taking app where users can sign up and log in. After logging in, a user
+A personal notes app for writing and returning to saved entries. This project was created with Lovable.
 
-should be able to create notes with a title and a note body and store them in their account.
+**Live app:** https://thought-journal-box.lovable.app
 
-When they log in again, they should see the notes they previously created.
+## How to use
 
-This project was built with [Lovable](https://lovable.dev).
+1. Open the live app and create an account or sign in.
+2. Create a note with a title and body, then save it.
+3. Return to the app and sign in again to view or edit your saved notes.
 
-**Live app**: https://thought-journal-box.lovable.app
+## Run locally
 
-## Build with Lovable
+1. Clone this repository and enter its folder:
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/5d9f91e2-8a16-45fb-8095-eb54053ba619).
+```bash
+git clone https://github.com/vamshicreates/thought-journal-box.git
+cd thought-journal-box
+```
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+2. Install dependencies and start the development server:
 
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+```bash
+npm install
 npm run dev
 ```
+
+3. Open the local URL printed by the dev server. Any account or data features need the project’s own Supabase configuration; do not commit local credentials.
+
+You can also continue editing in Lovable. Changes made there sync to this GitHub repository.
